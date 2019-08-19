@@ -20,7 +20,7 @@ int main(int argc, char * argv[])
 
     printf("--- print some number ---\n");
     printf("*** run with any arguments will output to file:\"test.txt\" ***\n");
-    for (i = 0; i < 10, i++)
+    for (i = 0; i < 10; i++)
     printf("  %d", i);
 
     return 0;
