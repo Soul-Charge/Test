@@ -8,7 +8,7 @@ int main(int argc, char * argv[])
     int descriptor;
     int i;
 
-    if ((my_file = fopen("test.txt", "w")))
+    if (!(my_file = fopen("test.txt", "w")))
     {
         fprintf(stderr, "Can't open test.txt\n");
         exit(1);
