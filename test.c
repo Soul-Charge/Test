@@ -13,7 +13,10 @@ int main(void)
     {
         pid = fork();
         if (!pid)
-            printf("I am child %d\n", i);
+        {
+            printf("I am child %d\n", i + 1);
+            break;
+        }
     }
     return 0;
 }
