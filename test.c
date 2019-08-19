@@ -9,11 +9,11 @@ int main(void)
 
     puts("test1");
     puts(str);
-    printf("a = %d", a);
+    printf("a = %d\n", a);
 
     fork();
     puts(str);
-    printf("a = %d", a);
+    printf("a = %d\n", a);
 
     puts("test2");
     puts("test3");
