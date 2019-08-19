@@ -4,19 +4,16 @@
 
 int main(void)
 {
-    char str[] = "for test.";
-    int a = 10;
+    int i;
+    pid_t pid;
 
-    puts("test1");
-    puts(str);
-    printf("a = %d\n", a);
-
-    fork();
-    puts(str);
-    printf("a = %d\n", a);
-
-    puts("test2");
-    puts("test3");
-    system("pause");
+    puts("I am father");
+    
+    for (i = 0; i < 10; i++)
+    {
+        pid = fork();
+        if (!pid)
+            printf("I am child %d\n", i);
+    }
     return 0;
 }
