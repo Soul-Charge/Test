@@ -34,12 +34,12 @@ int main(void)
 
         if (-1 == execl("./out", "./out", NULL))
             fprintf(stderr, "can't execute out: %s", strerror(errno));
-        else
+        else //disable
             puts("I had executed the out!");
     }
     else
     {
-        sleep(5); // father sleep 
+        //sleep(5); // father sleep 
         puts("father end");
     }
 
