@@ -27,7 +27,7 @@ int main(void)
         else
             puts("redirect stdout success.");
 
-        if (-1 == execl("/~/Test/test/out", "~/Test/test/out", NULL))
+        if (-1 == execl("~/Test/test/out", "~/Test/test/out", NULL))
             fprintf(stderr, "can't execute out: %s", strerror(errno));
         else
             puts("I had executed the out!");
