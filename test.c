@@ -32,6 +32,9 @@ int main(void)
         else
             puts("I had executed the out!");
     }
+    else
+        sleep(5); // father sleep 
+
     fclose(fp);
 
     return 0;
