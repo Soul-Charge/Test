@@ -16,6 +16,7 @@ int main(void)
     pid = fork();
     if (!pid)
     {
+        puts("I am child");
         fprintf(fp, "child: can I write the file?\n"); //check the child whether have the stream of test.txt
         if (-1 == dup2(fileno(fp), 1)) // redirect stdout to test.txt
         {
@@ -24,7 +25,10 @@ int main(void)
         else
             puts("redirect stdout success.");
 
-        execl("~/Test/test/out", "~/Test/test/out", NULL);
+        if (-1 == execl("~/Test/test/out", "~/Test/test/out", NULL))
+            fprintf(stderr, "can't execute out");
+        else
+            puts("I had executed the out!");
     }
     fclose(fp);
 
