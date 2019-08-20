@@ -9,7 +9,7 @@ int main(void)
     pid_t pid;
     FILE * fp;
 
-    if (NULL == (fp = fopen("test.txt", "r")))
+    if (NULL == (fp = fopen("test.txt", "w")))
     {
         fprintf(stderr, "Can't open test.txt\n");
         exit(1);
