@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <errno.h>
 
 int main(void)
 {
@@ -25,8 +27,8 @@ int main(void)
         else
             puts("redirect stdout success.");
 
-        if (-1 == execl("~/Test/test/out", "~/Test/test/out", NULL))
-            fprintf(stderr, "can't execute out");
+        if (-1 == execl("/~/Test/test/out", "~/Test/test/out", NULL))
+            fprintf(stderr, "can't execute out: %s", strerror(errno));
         else
             puts("I had executed the out!");
     }
