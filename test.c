@@ -14,7 +14,8 @@ int main(void)
     for (i = 0; i < 500; i++)
         printf("%d ", i);
     }
-    puts("father:end");
+    if (pid)
+        puts("father:end");
 
     return 0;
 }
