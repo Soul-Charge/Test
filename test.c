@@ -5,17 +5,20 @@
 int main(void)
 {
     pid_t pid;
-    int i;
+    FILE * fp;
 
-    puts("father:starts");
+    if (NULL == (fp = fopen("test.txt", "r")))
+    {
+        fprintf(stderr, "Can't open test.txt\n");
+        exit(1);
+    }
+
     pid = fork();
     if (!pid)
     {
-    for (i = 0; i < 500; i++)
-        printf("%d ", i);
+        dup2(fileno(fp), 1); // redirect stdout to test.txt
+        execl("C:\/Users\/lenovo\/Desktop\/out.exe", "C:\/Users\/lenovo\/Desktop\/out.exe", NULL);
     }
-    if (pid)
-        puts("father:end");
 
     return 0;
 }
