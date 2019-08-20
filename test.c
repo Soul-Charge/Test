@@ -39,8 +39,8 @@ int main(void)
     }
     else
     {
-        puts("I am father");
         sleep(5); // father sleep 
+        puts("father end");
     }
 
     fclose(fp);
