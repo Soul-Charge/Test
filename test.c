@@ -17,7 +17,7 @@ int main(void)
     if (!pid)
     {
         dup2(fileno(fp), 1); // redirect stdout to test.txt
-        execl("C:\/Users\/lenovo\/Desktop\/out.exe", "C:\/Users\/lenovo\/Desktop\/out.exe", NULL);
+        execl("~/Test/test/out", "~/Test/test/out", NULL);
     }
 
     return 0;
