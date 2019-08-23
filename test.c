@@ -7,8 +7,11 @@ int catch_signal(int sig, void (*handler)(int));
 
 int main(void)
 {
+    int i;
+    
     catch_signal(SIGINT, SIG_IGN);
-    system("pause");
+    for (i = 0; i < 1000; i++)
+        printf("%d ", i);
     return 0;
 }
 
