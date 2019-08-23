@@ -2,16 +2,21 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
+#define MAX 10000
 
 int catch_signal(int sig, void (*handler)(int));
 
 int main(void)
 {
-    int i;
+    int i, j;
     
     catch_signal(SIGINT, SIG_IGN);
-    for (i = 0; i < 1000; i++)
-        printf("%d ", i);
+    for (i = 0; i < MAX; i++)
+    {
+        printf("%d", i);
+        for (j = MAX * 10; j / 10; j /= 10)
+            putchar('\b');
+    }
     return 0;
 }
 
