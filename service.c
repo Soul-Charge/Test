@@ -26,6 +26,7 @@ int main(void)
     /* listen */
     if (listen(listener_d, 10))
         error("无法设置监听队列");
+    puts("Waiting for connection");
     
     struct sockaddr_storage client_addr;
     unsigned int address_size = sizeof(client_addr);
