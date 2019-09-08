@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
@@ -13,7 +15,7 @@ int main(void)
     if ((listener_d = socket(PF_INET, SOCK_STREAM, 0)) == -1)
         error("无法打开套接字");
     /* set reuse port */
-    if (setsockopt(listener_d, SOL_SOCKET, SO_REUSEADDR, (char *)&reuse, sizeof(int)));
+    if (setsockopt(listener_d, SOL_SOCKET, SO_REUSEADDR, (char *)&reuse, sizeof(int)))
         error("无法设置套接字的“重新使用端口”选项");
     /* bind port */
     struct sockaddr_in name;
