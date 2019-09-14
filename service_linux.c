@@ -22,10 +22,10 @@ int main(void)
     struct sockaddr_in name;
     name.sin_family = PF_INET;
     name.sin_port = (in_port_t)htons(2333);
-    name.sin_addr.s_addr = htonl(INADDR_ANY);
+    name.sin_addr.s_addr = inet_addr("127.0.0.1");
     if (bind(listener_d, (struct sockaddr *)&name, sizeof(name)) == -1)
         error("无法绑定端口");
-    printf("绑定的ip为:%s\n", inet_ntop(AF_INET, name.sin_addr, ipv4_str, sizeof(ipv4_str)));
+    printf("绑定的ip为:%s\n", inet_ntop(AF_INET, &name.sin_addr, ipv4_str, sizeof(ipv4_str)));
     printf("address: %s\n", ipv4_str);
     /* listen */
     if (listen(listener_d, 10))
