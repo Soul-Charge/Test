@@ -28,7 +28,6 @@ int main(void)
     name.sin_addr.s_addr = inet_addr("127.0.0.1");
     if (bind(listener_d, (struct sockaddr *)&name, sizeof(name)) == SOCKET_ERROR)
         error("无法绑定端口");
-    
     /* listen */
     if (listen(listener_d, 10) == SOCKET_ERROR)
         error("无法设置监听队列");
