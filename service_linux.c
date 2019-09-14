@@ -25,7 +25,7 @@ int main(void)
     name.sin_addr.s_addr = htonl(INADDR_ANY);
     if (bind(listener_d, (struct sockaddr *)&name, sizeof(name)) == -1)
         error("无法绑定端口");
-    printf("绑定的ip为:%s\n", inet_ntop(AF_INET, name.sin_addr.s_addr, ipv4_str, sizeof(ipv4_str)));
+    printf("绑定的ip为:%s\n", inet_ntop(AF_INET, name.sin_addr, ipv4_str, sizeof(ipv4_str)));
     printf("address: %s\n", ipv4_str);
     /* listen */
     if (listen(listener_d, 10))
